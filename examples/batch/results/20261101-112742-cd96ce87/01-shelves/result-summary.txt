@@ -1,0 +1,10 @@
+Job: 4fe027d4-d18a-4961-a7e4-95f3e4bdd4d1
+Status: Succeeded
+Order: MCP batch 01-shelves
+Requested parts: 6
+Created UTC: 2026-11-01T11:27:43.3986383+00:00
+Astra PID: 37224
+Sheets: 1
+Placed parts: 6
+Unplaced parts: 0
+XML: use the attached resource link; native output is preserved unchanged.

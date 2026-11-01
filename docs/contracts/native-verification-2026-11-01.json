@@ -1,0 +1,110 @@
+{
+  "checkedAtUtc": "2026-11-01T11:36:25.5172322+00:00",
+  "engine": "Installed Astra R-Nesting",
+  "client": "Official .NET MCP SDK 2.3.0; no Node client",
+  "runDirectory": "examples/batch/results/20261101-113120-2d07f9e5",
+  "cases": 8,
+  "passed": 8,
+  "requestedParts": 56,
+  "physicalSheets": 11,
+  "placedParts": 54,
+  "unplacedParts": 2,
+  "partsWithVerifiedCoordinates": 54,
+  "verifiedCutSegments": 95,
+  "allCoordinatesPresent": true,
+  "sequentialCalculations": true,
+  "distinctProcessIds": 8,
+  "automaticTests": {
+    "trx": ".cache/tdd/23-native-geometry-green.trx",
+    "failed": 0,
+    "passed": 72
+  },
+  "profileSetupScript": "scripts/configure-astra-profile.ps1",
+  "jobChecks": [
+    {
+      "case": "01-shelves",
+      "jobId": "78c9aca6-99c6-4ee9-9aeb-2844b6526ac7",
+      "processId": 35416,
+      "startedAtUtc": "2026-11-01T11:31:22.4811906+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:23.9212492+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "426FBAB5A660DA4C87376D62663444EF3BAA76DED15331371F4D1D92B6AA3EEE"
+    },
+    {
+      "case": "02-cabinet",
+      "jobId": "15f4fc4b-b9f2-4201-ae19-29bb2dd085f4",
+      "processId": 26904,
+      "startedAtUtc": "2026-11-01T11:31:24.1995099+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:25.5229443+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "F619774AF4EF3B0D626649E586C9132AC91155A9292028CA8BE17E301099D0C2"
+    },
+    {
+      "case": "03-two-materials",
+      "jobId": "f4d229d3-4f9d-4ef2-bde0-e5b2d67c5465",
+      "processId": 32384,
+      "startedAtUtc": "2026-11-01T11:31:25.8156813+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:27.2202547+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "13C438AB26FF222E8C18A43271765B52F65C4DD54A2469E6BA0CDB0B7927AE86"
+    },
+    {
+      "case": "04-rotation-required",
+      "jobId": "7554de25-9b89-43cf-9612-6439985c65e6",
+      "processId": 35400,
+      "startedAtUtc": "2026-11-01T11:31:27.4900512+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:28.6967241+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "3002F391BAA8C8193C217F4087A7D60F318E46C1DB3AC6D4FFE9B21A355EA295"
+    },
+    {
+      "case": "05-rotation-forbidden",
+      "jobId": "9e548388-fbba-496b-af9a-f52dfffdb686",
+      "processId": 32204,
+      "startedAtUtc": "2026-11-01T11:31:28.9693599+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:30.2168614+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "2C0CCBF26A65E3A682494D909FEDA224884FF95746979020F2A8853E333BF682"
+    },
+    {
+      "case": "06-oversize-part",
+      "jobId": "edd07eae-c8d4-49bc-a611-d4f206640fcd",
+      "processId": 8032,
+      "startedAtUtc": "2026-11-01T11:31:30.4903877+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:31.7773086+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "D3D1349A6AEDACA473976C02D50610B71773332A2D517B9D331503F9BCDBB097"
+    },
+    {
+      "case": "07-many-copies",
+      "jobId": "e62ed57f-52cb-4abe-9cd9-c04b06e369f8",
+      "processId": 20112,
+      "startedAtUtc": "2026-11-01T11:31:32.0551058+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:33.6758001+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "FF0D1DCFF2C95780E13BEAC551700D1F1D0C20F007B7FA5B06BAD203666297E6"
+    },
+    {
+      "case": "08-repeated-numbers",
+      "jobId": "a586aa2c-0323-4129-95cc-9f58b43f5ca7",
+      "processId": 31772,
+      "startedAtUtc": "2026-11-01T11:31:33.9493737+00:00",
+      "finishedAtUtc": "2026-11-01T11:31:35.5144737+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "6B239B024F7163D51E161DE9851EA4001AFFD79DAD2CD7F9369D23BEEAE7ADEF"
+    }
+  ],
+  "knownLimits": [
+    "Only eight furniture scenarios, no optimality proof",
+    "Edge catalog compatibility and decimal precision remain outside this run",
+    "Guillotine cut-tree executability is not reconstructed or proven; only explicit segment geometry is checked"
+  ]
+}

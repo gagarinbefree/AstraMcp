@@ -1,0 +1,9 @@
+Job: dad78b7e-ba98-4cf8-b14a-ae62718f0341
+Status: Succeeded
+Order: MCP batch 08-repeated-numbers
+Requested parts: 5
+Created UTC: 2026-11-01T11:24:57.0062583+00:00
+Astra PID: 35352
+Sheets: 1
+Placed parts: 5
+Unplaced parts: 0

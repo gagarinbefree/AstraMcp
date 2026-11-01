@@ -1,0 +1,6 @@
+Job: 06c462a9-61b6-4d09-8b4f-092006ef4618
+Status: Queued
+Order: MCP batch 04-rotation-required
+Requested parts: 1
+Created UTC: 2026-11-01T11:24:56.6841920+00:00
+Next: call get_job with this jobId. A queued job survives reconnection; shutdown interrupts an active calculation.

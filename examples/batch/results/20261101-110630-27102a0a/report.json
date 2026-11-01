@@ -1,0 +1,16 @@
+{
+  "RunId": "20261101-110630-27102a0a",
+  "CheckedAtUtc": "2026-11-01T11:06:36.4958913+00:00",
+  "Client": "Official .NET MCP SDK 2.3.0",
+  "Engine": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+  "Cases": 1,
+  "Outcomes": [
+    {
+      "Id": "01-shelves",
+      "JobId": "ac9fdf8f-bd57-42d4-8d8a-86be72b2b808",
+      "Status": "Failed",
+      "Passed": false,
+      "Error": "Job: ac9fdf8f-bd57-42d4-8d8a-86be72b2b808\nStatus: Failed\nOrder: MCP batch 01-shelves\nRequested parts: 6\nCreated UTC: 2026-11-01T11:06:33.7859714\u002B00:00\nAstra PID: 27564\nError: Astra exited without the expected XML export. Check startup command-line mode, exit export, *.xml filename and export directory."
+    }
+  ]
+}

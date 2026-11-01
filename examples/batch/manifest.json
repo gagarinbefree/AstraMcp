@@ -1,0 +1,77 @@
+{
+  "description": "Source orders only. Expected counts describe these feasible examples; no Astra results are generated.",
+  "cases": [
+    {
+      "id": "01-shelves",
+      "file": "01-shelves.xml",
+      "name": "MCP batch 01-shelves",
+      "materials": 1,
+      "requestedParts": 6,
+      "expectedPlacedParts": 6,
+      "expectedUnplacedParts": 0
+    },
+    {
+      "id": "02-cabinet",
+      "file": "02-cabinet.xml",
+      "name": "MCP batch 02-cabinet",
+      "materials": 1,
+      "requestedParts": 8,
+      "expectedPlacedParts": 8,
+      "expectedUnplacedParts": 0
+    },
+    {
+      "id": "03-two-materials",
+      "file": "03-two-materials.xml",
+      "name": "MCP batch 03-two-materials",
+      "materials": 2,
+      "requestedParts": 7,
+      "expectedPlacedParts": 7,
+      "expectedUnplacedParts": 0
+    },
+    {
+      "id": "04-rotation-required",
+      "file": "04-rotation-required.xml",
+      "name": "MCP batch 04-rotation-required",
+      "materials": 1,
+      "requestedParts": 1,
+      "expectedPlacedParts": 1,
+      "expectedUnplacedParts": 0
+    },
+    {
+      "id": "05-rotation-forbidden",
+      "file": "05-rotation-forbidden.xml",
+      "name": "MCP batch 05-rotation-forbidden",
+      "materials": 1,
+      "requestedParts": 2,
+      "expectedPlacedParts": 1,
+      "expectedUnplacedParts": 1
+    },
+    {
+      "id": "06-oversize-part",
+      "file": "06-oversize-part.xml",
+      "name": "MCP batch 06-oversize-part",
+      "materials": 1,
+      "requestedParts": 3,
+      "expectedPlacedParts": 2,
+      "expectedUnplacedParts": 1
+    },
+    {
+      "id": "07-many-copies",
+      "file": "07-many-copies.xml",
+      "name": "MCP batch 07-many-copies",
+      "materials": 1,
+      "requestedParts": 24,
+      "expectedPlacedParts": 24,
+      "expectedUnplacedParts": 0
+    },
+    {
+      "id": "08-repeated-numbers",
+      "file": "08-repeated-numbers.xml",
+      "name": "MCP batch 08-repeated-numbers",
+      "materials": 1,
+      "requestedParts": 5,
+      "expectedPlacedParts": 5,
+      "expectedUnplacedParts": 0
+    }
+  ]
+}

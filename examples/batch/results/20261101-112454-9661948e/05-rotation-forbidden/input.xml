@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data><data_order name="MCP batch 05-rotation-forbidden" note="Furniture integration batch; integer millimetres">
+  <list_materials>
+    <material name="MCP white board 16" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+      <list_parts>
+        <part number="R1" length="450" width="800" thick="16" quantity="1" rotate="0" assembly="Rotation" />
+        <part number="SMALL" length="200" width="200" thick="16" quantity="1" rotate="1" assembly="Rotation" />
+      </list_parts>
+      <list_sheets>
+        <sheet length="1000" width="500" thick="16" quantity="1" />
+      </list_sheets>
+    </material>
+  </list_materials>
+</data_order></data>

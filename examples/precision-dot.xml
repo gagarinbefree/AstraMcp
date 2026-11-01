@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <data_order name="MCP precision dot" note="Diagnostic import: decimal point, no edges">
+    <list_materials>
+      <material name="MCP white board 16" code="MCP-WHITE-16" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+        <list_parts>
+          <part number="D1" length="600.1" width="400.2" thick="16" quantity="1" rotate="1" assembly="Precision probe" note="Expected 600.1 x 400.2" />
+          <part number="D2" length="600.8" width="400.9" thick="16" quantity="1" rotate="1" assembly="Precision probe" note="Expected 600.8 x 400.9" />
+        </list_parts>
+        <list_sheets><sheet length="2800" width="2070" thick="16" quantity="2" /></list_sheets>
+      </material>
+    </list_materials>
+  </data_order>
+</data>

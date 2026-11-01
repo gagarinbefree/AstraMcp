@@ -1,0 +1,21 @@
+{
+  "Id": "e6b2bff3-7d49-4306-8091-78cc2a822968",
+  "RequestKey": "20261101-112454-9661948e-05-rotation-forbidden",
+  "InputHash": "3CB8186F554719EC75419286C75C5407BF098B034232EA8058445526FDF2E48D",
+  "ExecutionName": "PC-e6b2bff37d494306809178cc2a822968",
+  "Status": "TimedOut",
+  "CreatedAt": "2026-11-01T11:24:56.7871407+00:00",
+  "StartedAt": "2026-11-01T11:25:11.042776+00:00",
+  "FinishedAt": "2026-11-01T11:27:11.1500478+00:00",
+  "ProcessId": 36496,
+  "ProcessStartedAt": "2026-11-01T11:25:11.088901+00:00",
+  "CancellationRequested": false,
+  "Error": "Astra exceeded 120 seconds. Its owned process was stopped; a modal dialog or incomplete launch profile may be responsible.",
+  "Result": null,
+  "Configuration": {
+    "ExecutablePath": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+    "ExportDirectory": "C:\\vs\\PromCut\\AstraMcp\\.data\\astra-exchange",
+    "TimeoutSeconds": 120
+  },
+  "InputHashEncoding": "UTF-8 text received over MCP; saved original XML uses its declared encoding"
+}

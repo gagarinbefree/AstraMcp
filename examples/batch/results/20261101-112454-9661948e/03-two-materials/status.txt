@@ -1,0 +1,9 @@
+Job: 11967c9d-f71f-4595-9e95-6ead7711a8c6
+Status: Succeeded
+Order: MCP batch 03-two-materials
+Requested parts: 7
+Created UTC: 2026-11-01T11:24:56.6163140+00:00
+Astra PID: 22164
+Sheets: 2
+Placed parts: 7
+Unplaced parts: 0

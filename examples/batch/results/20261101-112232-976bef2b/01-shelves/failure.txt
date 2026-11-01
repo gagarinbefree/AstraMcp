@@ -1,0 +1,8 @@
+System.IO.InvalidDataException: Job: 71bccb5e-263c-40e2-8a33-8cd6782349a8
+Status: Failed
+Order: MCP batch 01-shelves
+Requested parts: 6
+Created UTC: 2026-11-01T11:22:34.2458437+00:00
+Astra PID: 28496
+Error: Astra exited without the expected XML export. Check startup command-line mode, exit export, *.xml filename and export directory.
+   at Program.<Main>$(String[] args) in C:\vs\PromCut\AstraMcp\tools\Verification\Program.cs:line 76

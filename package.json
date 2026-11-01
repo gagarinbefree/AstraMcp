@@ -1,0 +1,15 @@
+{
+  "name": "astra-mcp-verification",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Pinned MCP Inspector for verifying the .NET stdio server.",
+  "scripts": {
+    "inspector": "mcp-inspector",
+    "test:inspector": "node scripts/inspect.mjs",
+    "generate:orders": "node scripts/generate-orders.mjs",
+    "test:astra": "dotnet run --project tools/Verification/Verification.csproj -- . config.json"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/inspector": "2.13.0"
+  }
+}

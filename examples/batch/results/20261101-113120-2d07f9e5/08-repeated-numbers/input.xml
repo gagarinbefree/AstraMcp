@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data><data_order name="MCP batch 08-repeated-numbers" note="Furniture integration batch; integer millimetres">
+  <list_materials>
+    <material name="MCP white board 16" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+      <list_parts>
+        <part number="1" length="700" width="400" thick="16" quantity="2" rotate="0" assembly="Cabinet A" />
+        <part number="1" length="500" width="350" thick="16" quantity="3" rotate="1" assembly="Cabinet B" />
+      </list_parts>
+      <list_sheets>
+        <sheet length="2800" width="2070" thick="16" quantity="4" />
+      </list_sheets>
+    </material>
+  </list_materials>
+</data_order></data>

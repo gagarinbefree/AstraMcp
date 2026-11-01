@@ -1,0 +1,10 @@
+Job: 5ff5f3a7-d7e6-493e-9f71-6e7488340037
+Status: Succeeded
+Order: MCP batch 02-cabinet
+Requested parts: 8
+Created UTC: 2026-11-01T11:24:56.5415428+00:00
+Astra PID: 30832
+Sheets: 1
+Placed parts: 8
+Unplaced parts: 0
+XML: use the attached resource link; native output is preserved unchanged.

@@ -1,0 +1,11 @@
+Astra adapter
+Executable: C:\Program Files (x86)\Astra R-Nesting\Astra.exe
+Executable found: yes
+File version: 5.8.0.0
+Profile ready: yes (configuration assertion; verify with a real smoke run)
+Export directory: C:\vs\PromCut\AstraMcp\.data\astra-exchange
+Deadline: 120 seconds
+Parallel calculations: 1 per shared export profile
+Before each run: stop matching existing Astra processes by PID, then launch -i -n -q
+Dimension precision: exported whole-millimetre rounding is accepted; input and native XML stay unchanged
+Geometry: optional part x/y and list_cuts are preserved in XML; geometry is not inferred or validated

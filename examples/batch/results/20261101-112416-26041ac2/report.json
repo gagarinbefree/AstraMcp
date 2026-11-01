@@ -1,0 +1,20 @@
+{
+  "RunId": "20261101-112416-26041ac2",
+  "CheckedAtUtc": "2026-11-01T11:24:22.1142599+00:00",
+  "Client": "Official .NET MCP SDK 2.3.0",
+  "Engine": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+  "Cases": 1,
+  "Outcomes": [
+    {
+      "Id": "01-shelves",
+      "JobId": "5279cebe-1be7-4d02-b695-5fc25a868508",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 6,
+        "UnplacedParts": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Job: 0bcc8659-7234-48d6-9c15-c3d114c99dc5
+Status: Queued
+Order: MCP batch 06-oversize-part
+Requested parts: 3
+Created UTC: 2026-11-01T11:27:43.8255195+00:00
+Next: call get_job with this jobId. A queued job survives reconnection; shutdown interrupts an active calculation.

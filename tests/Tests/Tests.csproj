@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsTestProject>true</IsTestProject>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <ProjectReference Include="../../src/Mcp/Mcp.csproj" />
+    <ProjectReference Include="../../tools/Verification/Verification.csproj" />
+    <ProjectReference Include="../NativeFixture/NativeFixture.csproj" ReferenceOutputAssembly="false" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../../examples/order.xml" Link="TestData/order.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/MCP decimal shelf.xml" Link="TestData/astra-manual.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/MCP decimal shelf.coordinates.xml" Link="TestData/astra-coordinates.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/precision-dot.xml" Link="TestData/precision-dot.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/MCP precision dot.xml" Link="TestData/astra-dot.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/MCP precision comma.xml" Link="TestData/astra-comma.xml" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../../examples/batch/*" Link="TestData/batch/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

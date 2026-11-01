@@ -1,0 +1,12 @@
+* text=auto
+*.cs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
+*.ps1 text eol=lf
+*.xml text eol=lf
+*.sln text eol=crlf
+
+# Preserve native Astra XML bytes and encoding for regression evidence.
+examples/MCP*.xml -text whitespace=cr-at-eol
+examples/batch/results/**/result.astra.xml -text whitespace=cr-at-eol

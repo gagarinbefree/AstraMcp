@@ -1,0 +1,9 @@
+Job: 4170fd52-2ca6-4afd-b430-6e6d8b490e71
+Status: Succeeded
+Order: MCP batch 05-rotation-forbidden
+Requested parts: 2
+Created UTC: 2026-11-01T11:27:43.7848816+00:00
+Astra PID: 32384
+Sheets: 1
+Placed parts: 1
+Unplaced parts: 1

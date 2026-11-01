@@ -1,0 +1,3 @@
+2026-11-01T11:25:11.0844202+00:00 Stopped existing Astra PIDs: none
+2026-11-01T11:25:11.1325963+00:00 Started Astra PID 36496
+2026-11-01T11:27:11.1726457+00:00 TimedOut: Astra exceeded 120 seconds. Its owned process was stopped; a modal dialog or incomplete launch profile may be responsible.

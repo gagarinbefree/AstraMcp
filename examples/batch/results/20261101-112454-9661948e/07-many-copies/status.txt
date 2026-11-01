@@ -1,0 +1,9 @@
+Job: 7b15eb57-869b-4825-9e9f-ac4792f46b9a
+Status: Succeeded
+Order: MCP batch 07-many-copies
+Requested parts: 24
+Created UTC: 2026-11-01T11:24:56.9241735+00:00
+Astra PID: 27708
+Sheets: 3
+Placed parts: 24
+Unplaced parts: 0

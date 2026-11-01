@@ -1,0 +1,9 @@
+**/bin/
+**/obj/
+.cache/
+.data/
+publish/
+node_modules/
+.vs/
+TestResults/
+*.user

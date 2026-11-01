@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "astra": {
+      "command": "C:\\vs\\PromCut\\AstraMcp\\publish\\win-x86\\AstraMcp.exe",
+      "args": ["--config", "C:\\vs\\PromCut\\AstraMcp\\config.json"]
+    }
+  }
+}

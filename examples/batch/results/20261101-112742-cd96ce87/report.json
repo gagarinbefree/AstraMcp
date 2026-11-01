@@ -1,0 +1,97 @@
+{
+  "RunId": "20261101-112742-cd96ce87",
+  "CheckedAtUtc": "2026-11-01T11:27:57.2326536+00:00",
+  "Client": "Official .NET MCP SDK 2.3.0",
+  "Engine": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+  "Cases": 8,
+  "Outcomes": [
+    {
+      "Id": "01-shelves",
+      "JobId": "4fe027d4-d18a-4961-a7e4-95f3e4bdd4d1",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 6,
+        "UnplacedParts": 0
+      }
+    },
+    {
+      "Id": "02-cabinet",
+      "JobId": "79a76844-5477-4750-8cff-5f097b292b43",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 8,
+        "UnplacedParts": 0
+      }
+    },
+    {
+      "Id": "03-two-materials",
+      "JobId": "0363f259-1625-43b6-9772-b17935de9753",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 2,
+        "PlacedParts": 7,
+        "UnplacedParts": 0
+      }
+    },
+    {
+      "Id": "04-rotation-required",
+      "JobId": "a9db4c17-12ea-439e-9580-362184d6e054",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 1,
+        "UnplacedParts": 0
+      }
+    },
+    {
+      "Id": "05-rotation-forbidden",
+      "JobId": "4170fd52-2ca6-4afd-b430-6e6d8b490e71",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 1,
+        "UnplacedParts": 1
+      }
+    },
+    {
+      "Id": "06-oversize-part",
+      "JobId": "0bcc8659-7234-48d6-9c15-c3d114c99dc5",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 2,
+        "UnplacedParts": 1
+      }
+    },
+    {
+      "Id": "07-many-copies",
+      "JobId": "abbcbd26-6caf-414d-8811-76fc11590ea2",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 3,
+        "PlacedParts": 24,
+        "UnplacedParts": 0
+      }
+    },
+    {
+      "Id": "08-repeated-numbers",
+      "JobId": "abac5c45-9f06-44d7-9fab-3914333f6021",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 5,
+        "UnplacedParts": 0
+      }
+    }
+  ]
+}

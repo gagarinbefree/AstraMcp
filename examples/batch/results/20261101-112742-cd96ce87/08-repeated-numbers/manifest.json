@@ -1,0 +1,25 @@
+{
+  "Id": "abac5c45-9f06-44d7-9fab-3914333f6021",
+  "RequestKey": "20261101-112742-cd96ce87-08-repeated-numbers",
+  "InputHash": "7B17618A13288E3539B73832DCD220388C4565DE105B239D59ABC80496D2F07B",
+  "ExecutionName": "PC-abac5c459f0644d79fab3914333f6021",
+  "Status": "Succeeded",
+  "CreatedAt": "2026-11-01T11:27:43.9002515+00:00",
+  "StartedAt": "2026-11-01T11:27:55.5247101+00:00",
+  "FinishedAt": "2026-11-01T11:27:56.9878659+00:00",
+  "ProcessId": 23124,
+  "ProcessStartedAt": "2026-11-01T11:27:55.553449+00:00",
+  "CancellationRequested": false,
+  "Error": null,
+  "Result": {
+    "SheetCount": 1,
+    "PlacedParts": 5,
+    "UnplacedParts": 0
+  },
+  "Configuration": {
+    "ExecutablePath": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+    "ExportDirectory": "C:\\vs\\PromCut\\AstraMcp\\.data\\astra-exchange",
+    "TimeoutSeconds": 120
+  },
+  "InputHashEncoding": "UTF-8 text received over MCP; saved original XML uses its declared encoding"
+}

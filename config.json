@@ -1,0 +1,10 @@
+{
+  "Astra": {
+    "ExecutablePath": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+    "DataDirectory": ".data",
+    "ExportDirectory": ".data/astra-exchange",
+    "TimeoutSeconds": 120,
+    "PollIntervalMilliseconds": 250,
+    "ProfileReady": true
+  }
+}

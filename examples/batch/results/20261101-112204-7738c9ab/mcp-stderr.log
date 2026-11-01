@@ -1,0 +1,134 @@
+info: ModelContextProtocol.Server.StdioServerTransport[857250842]
+      Server (stream) (AstraMcp) transport reading messages.
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\vs\PromCut\AstraMcp\.cache
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'server/discover' request handler called.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'server/discover' request handler completed in 43.4016ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_capabilities" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 99.2516ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "validate_order" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 37.7455ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "submit_order" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 135.2751ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "submit_order" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 19.8914ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 5.9708ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.4652ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.7812ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.05ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 5.1869ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 6.4815ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.4655ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 5.3741ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.6297ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 5.3642ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.3775ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "get_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 4.6567ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'resources/read' request handler called.
+info: ModelContextProtocol.Server.McpServer[2070680514]
+      ReadResource "astra://jobs/b8c400b0-a963-4e9b-8197-f1b43ec04f65/manifest" completed.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'resources/read' request handler completed in 155.7047ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'resources/read' request handler called.
+info: ModelContextProtocol.Server.McpServer[2070680514]
+      ReadResource "astra://jobs/b8c400b0-a963-4e9b-8197-f1b43ec04f65/log" completed.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'resources/read' request handler completed in 6.22ms.
+info: ModelContextProtocol.Server.McpServer[570385771]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler called.
+info: ModelContextProtocol.Server.McpServer[2065726448]
+      "cancel_job" completed. IsError = False.
+info: ModelContextProtocol.Server.McpServer[1867955179]
+      Server (AstraMcp 1.0.0.0), Client (Verification 1.0.0.0) method 'tools/call' request handler completed in 22.1288ms.
+info: ModelContextProtocol.Server.StdioServerTransport[1221292038]
+      Server (stream) (AstraMcp) transport completed reading messages.
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...
+info: ModelContextProtocol.Server.StdioServerTransport[1375634372]
+      Server (stream) (AstraMcp) shutting down.
+info: ModelContextProtocol.Server.StdioServerTransport[1256455528]
+      Server (stream) (AstraMcp) shut down.

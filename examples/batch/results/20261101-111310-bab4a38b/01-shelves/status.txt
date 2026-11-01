@@ -1,0 +1,7 @@
+Job: 0e131b9c-f63c-4f4c-96ac-b65717be6f2f
+Status: Failed
+Order: MCP batch 01-shelves
+Requested parts: 6
+Created UTC: 2026-11-01T11:13:12.6705445+00:00
+Astra PID: 37684
+Error: Astra exited without the expected XML export. Check startup command-line mode, exit export, *.xml filename and export directory.

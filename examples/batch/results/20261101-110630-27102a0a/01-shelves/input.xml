@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data><data_order name="MCP batch 01-shelves" note="Furniture integration batch; integer millimetres">
+  <list_materials>
+    <material name="MCP white board 16" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+      <list_parts>
+        <part number="S1" length="720" width="450" thick="16" quantity="6" rotate="1" assembly="Shelves" />
+      </list_parts>
+      <list_sheets>
+        <sheet length="2800" width="2070" thick="16" quantity="4" />
+      </list_sheets>
+    </material>
+  </list_materials>
+</data_order></data>

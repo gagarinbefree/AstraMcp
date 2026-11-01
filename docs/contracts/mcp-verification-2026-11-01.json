@@ -1,0 +1,102 @@
+{
+  "checkedAtUtc": "2026-11-01T15:55:33.2347279+05:00",
+  "realAstraStarted": false,
+  "calculationEngine": "NativeFixture replay process for lifecycle tests; not a nesting algorithm",
+  "dotnetTests": {
+    "total": 64,
+    "passed": 64,
+    "trx": ".cache/tdd/21-mcp-verification-green.trx",
+    "failed": 0
+  },
+  "inspector": {
+    "checkedAtUtc": "2026-11-01T10:55:15.7141568+00:00",
+    "inspectorVersion": "2.13.0",
+    "invocation": "Direct CLI from PowerShell; Node wrapper failed with spawn EPERM in this environment",
+    "checksPassed": 5,
+    "evidencePrefix": ".cache/inspector/current-",
+    "realAstraStarted": false
+  },
+  "sourceOrders": {
+    "requestedParts": 56,
+    "nativeCalculation": "not performed",
+    "count": 8,
+    "directory": "examples/batch",
+    "submittedTo": "validate_order over stdio MCP"
+  },
+  "fixtureJobs": [
+    {
+      "jobId": "76a5fbac-2c1a-4d63-ae3c-54686ebf600d",
+      "status": "Failed",
+      "result": null,
+      "error": "The export belongs to a different order.",
+      "evidence": ".cache\\mcp-batch\\1a113e68b4de438db3c0452a4400ddef\\jobs\\76a5fbac-2c1a-4d63-ae3c-54686ebf600d\\manifest.json"
+    },
+    {
+      "jobId": "8c132ade-8f66-40d5-b00e-fb43e7275e44",
+      "status": "TimedOut",
+      "result": null,
+      "error": "Astra exceeded 2 seconds. Its owned process was stopped; a modal dialog or incomplete launch profile may be responsible.",
+      "evidence": ".cache\\mcp-batch\\44b9104d02a542aabe99c8da09385869\\jobs\\8c132ade-8f66-40d5-b00e-fb43e7275e44\\manifest.json"
+    },
+    {
+      "jobId": "35278655-690c-409c-8df4-3c8936e73eec",
+      "status": "Cancelled",
+      "result": null,
+      "error": null,
+      "evidence": ".cache\\mcp-batch\\875e9b35eeea41d3838afdff71fd54fb\\jobs\\35278655-690c-409c-8df4-3c8936e73eec\\manifest.json"
+    },
+    {
+      "jobId": "bfd894f3-0b15-4185-807b-8cfe60a43997",
+      "status": "Cancelled",
+      "result": null,
+      "error": null,
+      "evidence": ".cache\\mcp-batch\\875e9b35eeea41d3838afdff71fd54fb\\jobs\\bfd894f3-0b15-4185-807b-8cfe60a43997\\manifest.json"
+    },
+    {
+      "jobId": "30e920aa-dafd-4314-8b43-788825659ba3",
+      "status": "Succeeded",
+      "result": {
+        "SheetCount": 1,
+        "PlacedParts": 2,
+        "UnplacedParts": 0
+      },
+      "error": null,
+      "evidence": ".cache\\mcp-batch\\99ac6cb397ee41c98872e166528d7921\\jobs\\30e920aa-dafd-4314-8b43-788825659ba3\\manifest.json"
+    },
+    {
+      "jobId": "47742238-89a4-495e-8bf2-a07b667a7515",
+      "status": "Succeeded",
+      "result": {
+        "SheetCount": 1,
+        "PlacedParts": 2,
+        "UnplacedParts": 0
+      },
+      "error": null,
+      "evidence": ".cache\\mcp-batch\\99ac6cb397ee41c98872e166528d7921\\jobs\\47742238-89a4-495e-8bf2-a07b667a7515\\manifest.json"
+    },
+    {
+      "jobId": "fedb89b2-c930-45e5-9780-7c97c64bddc4",
+      "status": "Succeeded",
+      "result": {
+        "SheetCount": 1,
+        "PlacedParts": 2,
+        "UnplacedParts": 0
+      },
+      "error": null,
+      "evidence": ".cache\\mcp-batch\\99ac6cb397ee41c98872e166528d7921\\jobs\\fedb89b2-c930-45e5-9780-7c97c64bddc4\\manifest.json"
+    },
+    {
+      "jobId": "ecc8e41b-1be6-4432-9807-75457f51f7ef",
+      "status": "Failed",
+      "result": null,
+      "error": "Unexpected part dimensions, assembly, rotation or excess quantity in result. Part 'S1', material 'MCP white board 16', assembly 'MCP cabinet'. Unrotated result size: 9999 x 400 x 16 mm. Requested sizes: 600.1 x 400.2 x 16 mm.",
+      "evidence": ".cache\\mcp-batch\\bed5c491e58441ecbdf9eaea91ebc586\\jobs\\ecc8e41b-1be6-4432-9807-75457f51f7ef\\manifest.json"
+    }
+  ],
+  "limits": [
+    "No installed Astra launch; previous user restriction retained pending clarification",
+    "Fixture XML is not the result of calculating the eight generated furniture orders",
+    "No independent geometric or optimality verification",
+    "scripts/inspect.mjs cannot spawn Node in this environment; direct Inspector CLI passed"
+  ]
+}

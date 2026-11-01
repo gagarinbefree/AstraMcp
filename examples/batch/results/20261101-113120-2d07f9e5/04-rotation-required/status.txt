@@ -1,0 +1,9 @@
+Job: 7554de25-9b89-43cf-9612-6439985c65e6
+Status: Succeeded
+Order: MCP batch 04-rotation-required
+Requested parts: 1
+Created UTC: 2026-11-01T11:31:22.4157380+00:00
+Astra PID: 35400
+Sheets: 1
+Placed parts: 1
+Unplaced parts: 0

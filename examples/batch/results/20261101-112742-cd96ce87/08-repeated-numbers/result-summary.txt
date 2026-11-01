@@ -1,0 +1,10 @@
+Job: abac5c45-9f06-44d7-9fab-3914333f6021
+Status: Succeeded
+Order: MCP batch 08-repeated-numbers
+Requested parts: 5
+Created UTC: 2026-11-01T11:27:43.9002515+00:00
+Astra PID: 23124
+Sheets: 1
+Placed parts: 5
+Unplaced parts: 0
+XML: use the attached resource link; native output is preserved unchanged.

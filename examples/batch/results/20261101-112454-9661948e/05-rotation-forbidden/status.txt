@@ -1,0 +1,7 @@
+Job: e6b2bff3-7d49-4306-8091-78cc2a822968
+Status: TimedOut
+Order: MCP batch 05-rotation-forbidden
+Requested parts: 2
+Created UTC: 2026-11-01T11:24:56.7871407+00:00
+Astra PID: 36496
+Error: Astra exceeded 120 seconds. Its owned process was stopped; a modal dialog or incomplete launch profile may be responsible.

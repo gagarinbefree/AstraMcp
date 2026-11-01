@@ -1,0 +1,6 @@
+Job: abbcbd26-6caf-414d-8811-76fc11590ea2
+Status: Queued
+Order: MCP batch 07-many-copies
+Requested parts: 24
+Created UTC: 2026-11-01T11:27:43.8655635+00:00
+Next: call get_job with this jobId. A queued job survives reconnection; shutdown interrupts an active calculation.

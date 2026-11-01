@@ -1,0 +1,153 @@
+{
+  "RunId": "20261101-113120-2d07f9e5",
+  "CheckedAtUtc": "2026-11-01T11:31:35.6783204+00:00",
+  "Client": "Official .NET MCP SDK 2.3.0",
+  "Engine": "C:\\Program Files (x86)\\Astra R-Nesting\\Astra.exe",
+  "Cases": 8,
+  "Outcomes": [
+    {
+      "Id": "01-shelves",
+      "JobId": "78c9aca6-99c6-4ee9-9aeb-2844b6526ac7",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 6,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 6,
+        "CheckedParts": 6,
+        "CutSegments": 9,
+        "MeasuredCutLengthMillimetres": 10662.40,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "02-cabinet",
+      "JobId": "15f4fc4b-b9f2-4201-ae19-29bb2dd085f4",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 8,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 8,
+        "CheckedParts": 8,
+        "CutSegments": 13,
+        "MeasuredCutLengthMillimetres": 16759.60,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "03-two-materials",
+      "JobId": "f4d229d3-4f9d-4ef2-bde0-e5b2d67c5465",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 2,
+        "PlacedParts": 7,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 7,
+        "CheckedParts": 7,
+        "CutSegments": 16,
+        "MeasuredCutLengthMillimetres": 24217.00,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "04-rotation-required",
+      "JobId": "7554de25-9b89-43cf-9612-6439985c65e6",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 1,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 1,
+        "CheckedParts": 1,
+        "CutSegments": 4,
+        "MeasuredCutLengthMillimetres": 2606.40,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "05-rotation-forbidden",
+      "JobId": "9e548388-fbba-496b-af9a-f52dfffdb686",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 1,
+        "UnplacedParts": 1
+      },
+      "Geometry": {
+        "PlacedParts": 1,
+        "CheckedParts": 1,
+        "CutSegments": 4,
+        "MeasuredCutLengthMillimetres": 1406.40,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "06-oversize-part",
+      "JobId": "edd07eae-c8d4-49bc-a611-d4f206640fcd",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 2,
+        "UnplacedParts": 1
+      },
+      "Geometry": {
+        "PlacedParts": 2,
+        "CheckedParts": 2,
+        "CutSegments": 5,
+        "MeasuredCutLengthMillimetres": 6809.60,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "07-many-copies",
+      "JobId": "e62ed57f-52cb-4abe-9cd9-c04b06e369f8",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 3,
+        "PlacedParts": 24,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 24,
+        "CheckedParts": 24,
+        "CutSegments": 35,
+        "MeasuredCutLengthMillimetres": 48544.40,
+        "Complete": true
+      }
+    },
+    {
+      "Id": "08-repeated-numbers",
+      "JobId": "a586aa2c-0323-4129-95cc-9f58b43f5ca7",
+      "Status": "Succeeded",
+      "Passed": true,
+      "Result": {
+        "SheetCount": 1,
+        "PlacedParts": 5,
+        "UnplacedParts": 0
+      },
+      "Geometry": {
+        "PlacedParts": 5,
+        "CheckedParts": 5,
+        "CutSegments": 9,
+        "MeasuredCutLengthMillimetres": 9019.40,
+        "Complete": true
+      }
+    }
+  ]
+}
