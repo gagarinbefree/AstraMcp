@@ -92,7 +92,7 @@ public sealed class NativeProcessTests : IDisposable
             await Assert.ThrowsAnyAsync<OperationCanceledException>(() => execution);
         }
         Assert.Contains("Window created: yes", output);
-        Assert.DoesNotContain(Process.GetProcessesByName("NativeFixture"), p => p.Id == pid);
+        Assert.False(IsProcessRunning(pid));
         var desktop = output.Split('\n').Single(line => line.StartsWith("Desktop: ", StringComparison.Ordinal))[9..].Trim();
         Assert.True(SpinWait.SpinUntil(() => !DesktopExists(desktop), TimeSpan.FromSeconds(3)));
     }
@@ -129,7 +129,7 @@ public sealed class NativeProcessTests : IDisposable
         await Assert.ThrowsAsync<IOException>(() => new AstraProcess().RunAsync(new(executable, input, directory, true),
             (id, _) => { pid = id; throw new IOException("PID persistence failed."); }, CancellationToken.None));
         Assert.NotNull(pid);
-        Assert.DoesNotContain(Process.GetProcessesByName("NativeFixture"), process => process.Id == pid);
+        Assert.False(IsProcessRunning(pid.Value));
         var desktop = File.ReadAllText(Path.Combine(directory, "execution.log")).Split('\n')
             .Single(line => line.StartsWith("Native desktop: ", StringComparison.Ordinal))[16..].Trim();
         Assert.False(DesktopExists(desktop));
@@ -143,6 +143,8 @@ public sealed class NativeProcessTests : IDisposable
         using var child = Process.Start(AstraProcess.CreateStartInfo(new(executable, input, directory)))!;
         try
         {
+            // Process.Start returns before the image and managed entry point are ready.
+            Assert.Contains("fixture stdout", await child.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(10)));
             var stopped = await new AstraProcess().StopExistingAsync(executable, CancellationToken.None);
             Assert.Contains(child.Id, stopped);
             Assert.True(child.HasExited);
@@ -165,12 +167,19 @@ public sealed class NativeProcessTests : IDisposable
             await Assert.ThrowsAnyAsync<OperationCanceledException>(() => new AstraProcess().RunAsync(new(executable, input, directory, background), (pid, _) => ownedPid = pid, cancellation.Token));
             Assert.NotNull(ownedPid);
             Assert.False(other.HasExited);
-            Assert.DoesNotContain(Process.GetProcessesByName("NativeFixture"), p => p.Id == ownedPid);
+            Assert.False(IsProcessRunning(ownedPid.Value));
         }
         finally { if (!other.HasExited) { other.Kill(true); await other.WaitForExitAsync(); } }
     }
 
     public void Dispose() { if (Directory.Exists(directory)) Directory.Delete(directory, true); }
+
+    // Exited processes can remain enumerable while another monitor retains a process handle.
+    private static bool IsProcessRunning(int id)
+    {
+        try { using var process = Process.GetProcessById(id); return !process.HasExited; }
+        catch (ArgumentException) { return false; }
+    }
 
     private static string CurrentDesktop()
     {
