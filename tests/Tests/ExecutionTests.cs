@@ -46,6 +46,18 @@ public sealed class ExecutionTests : IDisposable
     }
 
     [Theory]
+    [InlineData(true)]
+    [InlineData(false)]
+    public async Task Forwards_configured_background_mode_to_native_execution(bool background)
+    {
+        options.RunInBackground = background;
+        store.Enqueue(OrderXmlTests.Source, "execution-mode");
+        await new JobExecutor(options, store, process).ExecuteNextAsync(CancellationToken.None);
+        Assert.NotNull(process.LastRequest);
+        Assert.Equal(background, process.LastRequest.RunInBackground);
+    }
+
+    [Theory]
     [InlineData("missing")]
     [InlineData("exit-error")]
     [InlineData("stop-error")]
@@ -144,6 +156,7 @@ public sealed class ExecutionTests : IDisposable
         public List<string> Calls { get; } = [];
         public TaskCompletionSource Started { get; } = new(TaskCreationOptions.RunContinuationsAsynchronously);
         public bool CancellationObserved { get; private set; }
+        public ProcessRequest? LastRequest { get; private set; }
 
         public Task<IReadOnlyList<int>> StopExistingAsync(string executablePath, CancellationToken cancellationToken)
         {
@@ -155,6 +168,7 @@ public sealed class ExecutionTests : IDisposable
         public async Task<int> RunAsync(ProcessRequest request, Action<int, DateTimeOffset> onStarted, CancellationToken cancellationToken)
         {
             Calls.Add("run");
+            LastRequest = request;
             onStarted(234, DateTimeOffset.UtcNow);
             Started.TrySetResult();
             if (Mode == "hang")

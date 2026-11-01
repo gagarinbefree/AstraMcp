@@ -5,6 +5,7 @@
     "ExportDirectory": ".data/astra-exchange",
     "TimeoutSeconds": 120,
     "PollIntervalMilliseconds": 250,
-    "ProfileReady": true
+    "ProfileReady": true,
+    "RunInBackground": true
   }
 }

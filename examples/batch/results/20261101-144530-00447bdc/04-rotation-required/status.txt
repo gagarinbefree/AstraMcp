@@ -1,0 +1,9 @@
+Job: b824032a-f31e-4ad6-9a64-4f85bd451f51
+Status: Succeeded
+Order: MCP batch 04-rotation-required
+Requested parts: 1
+Created UTC: 2026-11-01T14:45:35.4175956+00:00
+Astra PID: 35476
+Sheets: 1
+Placed parts: 1
+Unplaced parts: 0

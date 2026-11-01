@@ -1,0 +1,10 @@
+Job: b70bac94-cd9d-4ac7-903c-21def2251af0
+Status: Succeeded
+Order: MCP batch 05-rotation-forbidden
+Requested parts: 2
+Created UTC: 2026-11-01T14:45:35.4969277+00:00
+Astra PID: 29084
+Sheets: 1
+Placed parts: 1
+Unplaced parts: 1
+XML: use the attached resource link; native output is preserved unchanged.

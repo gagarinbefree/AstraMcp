@@ -4,7 +4,8 @@ namespace AstraMcp.Core;
 /// <param name="ExecutablePath">Configured executable path.</param>
 /// <param name="InputPath">Generated execution input path.</param>
 /// <param name="LogDirectory">Directory for native stdout and stderr.</param>
-public sealed record ProcessRequest(string ExecutablePath, string InputPath, string LogDirectory);
+/// <param name="RunInBackground">Whether to create the process on a separate, non-visible desktop.</param>
+public sealed record ProcessRequest(string ExecutablePath, string InputPath, string LogDirectory, bool RunInBackground = false);
 
 /// <summary>Provides isolated process control for the native application.</summary>
 public interface IAstraProcess

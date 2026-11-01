@@ -1,0 +1,9 @@
+Job: 5302790b-95e5-4bf8-9e4d-9228c0751b16
+Status: Succeeded
+Order: MCP batch 02-cabinet
+Requested parts: 8
+Created UTC: 2026-11-01T14:45:35.2446108+00:00
+Astra PID: 29760
+Sheets: 1
+Placed parts: 8
+Unplaced parts: 0

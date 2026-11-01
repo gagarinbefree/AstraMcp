@@ -1,0 +1,6 @@
+Job: 5302790b-95e5-4bf8-9e4d-9228c0751b16
+Status: Queued
+Order: MCP batch 02-cabinet
+Requested parts: 8
+Created UTC: 2026-11-01T14:45:35.2446108+00:00
+Next: call get_job with this jobId. A queued job survives reconnection; shutdown interrupts an active calculation.

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data><data_order name="MCP batch 03-two-materials" note="Furniture integration batch; integer millimetres">
+  <list_materials>
+    <material name="MCP white board 16" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+      <list_parts>
+        <part number="SIDE" length="1800" width="550" thick="16" quantity="2" rotate="0" assembly="Cabinet" />
+        <part number="SHELF" length="568" width="530" thick="16" quantity="3" rotate="1" assembly="Cabinet" />
+      </list_parts>
+      <list_sheets>
+        <sheet length="2800" width="2070" thick="16" quantity="4" />
+      </list_sheets>
+    </material>
+    <material name="MCP MDF back 3" wid_cut="3.2" sheet_border="5;5;5;5" nest_direct="2" corner="0">
+      <list_parts>
+        <part number="BACK" length="1800" width="800" thick="3" quantity="2" rotate="0" assembly="Cabinet" />
+      </list_parts>
+      <list_sheets>
+        <sheet length="2800" width="2070" thick="3" quantity="2" />
+      </list_sheets>
+    </material>
+  </list_materials>
+</data_order></data>

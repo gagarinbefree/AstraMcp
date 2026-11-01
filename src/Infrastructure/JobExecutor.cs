@@ -36,7 +36,8 @@ public sealed class JobExecutor(AdapterOptions options, IJobStore store, IAstraP
             if (File.Exists(expectedExport)) throw new InvalidDataException("The unique export filename already exists; refusing a potentially stale result.");
             var stopped = await process.StopExistingAsync(options.ExecutablePath, linked.Token);
             Log("Stopped existing Astra PIDs: " + (stopped.Count == 0 ? "none" : string.Join(", ", stopped)));
-            var exit = await process.RunAsync(new(options.ExecutablePath, input, artifacts.DirectoryFor(job.Id)),
+            Log("Execution mode: " + (options.RunInBackground ? "isolated desktop (background)" : "visible"));
+            var exit = await process.RunAsync(new(options.ExecutablePath, input, artifacts.DirectoryFor(job.Id), options.RunInBackground),
                 (id, started) => { store.SetProcess(job.Id, id, started); Log("Started Astra PID " + id); }, linked.Token);
             linked.Token.ThrowIfCancellationRequested();
             if (exit != 0) throw new IOException("Astra exited with code " + exit + ". Inspect the execution logs.");

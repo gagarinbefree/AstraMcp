@@ -28,6 +28,7 @@ public sealed class AstraTools(AdapterOptions options, IJobStore store, Artifact
             Executable: {options.ExecutablePath}
             Executable found: {(exists ? "yes" : "no")}
             File version: {version}
+            Execution mode: {(options.RunInBackground ? "isolated desktop (background)" : "visible")}
             Profile ready: {(options.ProfileReady ? "yes (configuration assertion; verify with a real smoke run)" : "no; configure command-line startup and XML export on exit")}
             Export directory: {options.ExportDirectory}
             Deadline: {options.TimeoutSeconds} seconds

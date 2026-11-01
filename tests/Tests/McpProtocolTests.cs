@@ -76,6 +76,13 @@ public sealed class McpProtocolTests : IAsyncLifetime
     }
 
     [Fact]
+    public async Task Capabilities_explain_default_background_desktop_execution()
+    {
+        var capabilities = await client.CallToolAsync("get_capabilities");
+        Assert.Contains("Execution mode: isolated desktop (background)", Assert.Single(capabilities.Content.OfType<TextContentBlock>()).Text);
+    }
+
+    [Fact]
     public async Task Result_is_a_summary_and_resource_link_while_xml_is_read_explicitly()
     {
         var options = new AdapterOptions { DataDirectory = directory, ExecutablePath = Path.Combine(directory, "MissingAstra.exe"), ExportDirectory = Path.Combine(directory, "exchange") };

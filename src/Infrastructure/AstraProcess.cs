@@ -40,6 +40,8 @@ public sealed class AstraProcess : IAstraProcess
     {
         cancellationToken.ThrowIfCancellationRequested();
         Directory.CreateDirectory(request.LogDirectory);
+        if (request.RunInBackground)
+            return await NativeDesktopProcess.RunAsync(request, onStarted, cancellationToken);
         using var process = new Process { StartInfo = CreateStartInfo(request) };
         using var output = File.Create(Path.Combine(request.LogDirectory, "native-stdout.log"));
         using var error = File.Create(Path.Combine(request.LogDirectory, "native-stderr.log"));
@@ -75,7 +77,8 @@ public sealed class AstraProcess : IAstraProcess
             WorkingDirectory = Path.GetDirectoryName(request.ExecutablePath)!,
             UseShellExecute = false,
             RedirectStandardOutput = true,
-            RedirectStandardError = true
+            RedirectStandardError = true,
+            CreateNoWindow = true
         };
         start.ArgumentList.Add(request.InputPath);
         start.ArgumentList.Add("-i");

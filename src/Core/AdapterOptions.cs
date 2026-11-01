@@ -15,6 +15,8 @@ public sealed class AdapterOptions
     public int PollIntervalMilliseconds { get; set; } = 250;
     /// <summary>Gets or sets whether the required Astra launch and exit profile was configured.</summary>
     public bool ProfileReady { get; set; }
+    /// <summary>Gets or sets whether native windows are isolated on a non-visible Windows desktop.</summary>
+    public bool RunInBackground { get; set; } = true;
 
     /// <summary>Resolves relative directories against the configuration file and validates limits.</summary>
     /// <param name="configurationDirectory">Absolute directory containing the configuration file.</param>
