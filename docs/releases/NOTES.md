@@ -1,6 +1,6 @@
-# Astra MCP v0.1.0
+# Astra MCP for Windows x86
 
-Initial Windows x86 release of the local MCP adapter for Astra R-Nesting.
+Local MCP adapter for Astra R-Nesting.
 
 ## Included
 
@@ -9,11 +9,11 @@ Initial Windows x86 release of the local MCP adapter for Astra R-Nesting.
 * Background execution on a separate Windows desktop, enabled by default.
 * Visible execution for diagnostics through `Astra:RunInBackground=false`.
 * Owned-process cancellation, execution deadlines and native stdout/stderr logs.
-* Separate Tests and Build workflows with cancellation of superseded runs.
+* Sequential Tests, Build and Release jobs with cancellation of superseded runs.
 
 ## Installation
 
-Extract `AstraMcp-win-x86-v0.1.0.zip` into a writable directory. It includes the
+Extract the versioned `AstraMcp-win-x86-*.zip` into a writable directory. It includes the
 .NET runtime; Node.js and a separate .NET runtime installation are not required.
 The SHA-256 checksum is attached alongside the archive.
 The archive also includes a configuration guide and the profile setup script.

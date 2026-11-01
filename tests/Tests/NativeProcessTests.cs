@@ -136,6 +136,40 @@ public sealed class NativeProcessTests : IDisposable
     }
 
     [Fact]
+    public async Task Completed_background_job_logs_can_be_deleted_while_unrelated_children_are_running()
+    {
+        var input = Path.Combine(directory, "completed.xml");
+        var otherInput = Path.Combine(directory, "other.xml");
+        var logDirectory = Path.Combine(directory, "completed-job");
+        Directory.CreateDirectory(logDirectory);
+        File.WriteAllText(input, "normal");
+        File.WriteAllText(otherInput, "hang");
+        Process? other = null;
+        try
+        {
+            var exit = await new AstraProcess().RunAsync(new(executable, input, logDirectory, true), (_, _) =>
+            {
+                other = Process.Start(AstraProcess.CreateStartInfo(new(executable, otherInput, directory)))!;
+            }, CancellationToken.None);
+            Assert.Equal(0, exit);
+            Assert.NotNull(other);
+            Assert.Contains("fixture stdout", await other.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(10)));
+            Assert.False(other.HasExited);
+            // A still-running unrelated child must not retain this completed job's log handles.
+            Directory.Delete(logDirectory, true);
+            Assert.False(Directory.Exists(logDirectory));
+        }
+        finally
+        {
+            if (other is not null)
+            {
+                if (!other.HasExited) { other.Kill(true); await other.WaitForExitAsync(); }
+                other.Dispose();
+            }
+        }
+    }
+
+    [Fact]
     public async Task Stops_existing_matching_process_by_pid_before_next_execution()
     {
         var input = Path.Combine(directory, "hang.xml");

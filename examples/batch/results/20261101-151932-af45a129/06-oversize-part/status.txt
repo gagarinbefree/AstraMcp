@@ -1,0 +1,9 @@
+Job: 1a9708a4-c171-424e-9cf0-8ed891d29a27
+Status: Succeeded
+Order: MCP batch 06-oversize-part
+Requested parts: 3
+Created UTC: 2026-11-01T15:19:34.3414657+00:00
+Astra PID: 15048
+Sheets: 1
+Placed parts: 2
+Unplaced parts: 1

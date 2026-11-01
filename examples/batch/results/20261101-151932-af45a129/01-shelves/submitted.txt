@@ -1,0 +1,6 @@
+Job: 30b2c8f4-7b83-4bb5-bf0c-b627c0763314
+Status: Queued
+Order: MCP batch 01-shelves
+Requested parts: 6
+Created UTC: 2026-11-01T15:19:33.9122203+00:00
+Next: call get_job with this jobId. A queued job survives reconnection; shutdown interrupts an active calculation.

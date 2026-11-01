@@ -1,0 +1,10 @@
+Job: bffd428a-2d00-490a-88f6-967e4a1dc678
+Status: Succeeded
+Order: MCP batch 04-rotation-required
+Requested parts: 1
+Created UTC: 2026-11-01T15:19:34.1106660+00:00
+Astra PID: 25880
+Sheets: 1
+Placed parts: 1
+Unplaced parts: 0
+XML: use the attached resource link; native output is preserved unchanged.

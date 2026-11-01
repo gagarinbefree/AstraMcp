@@ -1,7 +1,8 @@
-name: Build
+name: Test, build and release
 
 on:
   push:
+    branches: ['**']
   pull_request:
   workflow_dispatch:
 
@@ -9,12 +10,12 @@ permissions:
   contents: read
 
 concurrency:
-  group: build-${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Windows x86 build
+  tests:
+    name: Tests
     runs-on: windows-2025
     timeout-minutes: 15
     defaults:
@@ -39,8 +40,59 @@ jobs:
           cache-dependency-path: '**/packages.lock.json'
       - name: Restore locked dependencies
         run: dotnet restore AstraMcp.sln --locked-mode
+      # NativeFixture exercises desktop isolation without an installed Astra application.
+      - name: Run automated tests
+        run: dotnet test tests/Tests/Tests.csproj -c Release --no-restore --logger "trx;LogFileName=tests.trx" --results-directory .cache/verification
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: test-results-windows
+          path: .cache/verification/*.trx
+          include-hidden-files: true
+          if-no-files-found: warn
+          retention-days: 14
+
+  build:
+    name: Build
+    needs: tests
+    runs-on: windows-2025
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: pwsh
+    env:
+      DOTNET_CLI_HOME: ${{ github.workspace }}/.cache/dotnet
+      DOTNET_NOLOGO: 'true'
+      DOTNET_CLI_TELEMETRY_OPTOUT: 'true'
+      DOTNET_CLI_WORKLOAD_UPDATE_NOTIFY_DISABLE: 'true'
+      NUGET_PACKAGES: ${{ github.workspace }}/.cache/dotnet/.nuget/packages
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+          cache: true
+          cache-dependency-path: '**/packages.lock.json'
+      - name: Restore locked dependencies
+        run: dotnet restore AstraMcp.sln --locked-mode
+      - name: Set build version
+        id: version
+        run: |
+          [xml]$properties = Get-Content -LiteralPath Directory.Build.props -Raw
+          $baseVersion = [version]$properties.Project.PropertyGroup.VersionPrefix
+          $version = "$($baseVersion.Major).$($baseVersion.Minor).$env:GITHUB_RUN_NUMBER"
+          "version=$version" >> $env:GITHUB_OUTPUT
       - name: Publish self-contained Windows x86 build
-        run: dotnet publish src/Mcp/Mcp.csproj -c Release -r win-x86 --self-contained true -o publish/win-x86 -p:RestoreLockedMode=true
+        env:
+          BUILD_VERSION: ${{ steps.version.outputs.version }}
+        run: dotnet publish src/Mcp/Mcp.csproj -c Release -r win-x86 --self-contained true -o publish/win-x86 -p:RestoreLockedMode=true "-p:Version=$env:BUILD_VERSION"
       - name: Prepare distributable configuration and instructions
         run: |
           $path = 'publish/win-x86/config.json'
@@ -53,26 +105,21 @@ jobs:
       - name: Upload Windows x86 build
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: AstraMcp-win-x86
+          name: AstraMcp-win-x86-v${{ steps.version.outputs.version }}
           path: publish/win-x86/
           if-no-files-found: error
           retention-days: 14
 
-  release-tests:
-    name: Verify release
-    if: startsWith(github.ref, 'refs/tags/v')
-    uses: ./.github/workflows/tests.yml
-
   release:
-    name: Publish GitHub release
-    if: startsWith(github.ref, 'refs/tags/v')
-    needs: [build, release-tests]
+    name: Release
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    needs: build
     runs-on: windows-2025
     timeout-minutes: 10
     permissions:
       contents: write
     env:
-      RELEASE_TAG: ${{ github.ref_name }}
+      RELEASE_VERSION: ${{ needs.build.outputs.version }}
       GH_TOKEN: ${{ github.token }}
       GH_REPO: ${{ github.repository }}
     steps:
@@ -83,20 +130,21 @@ jobs:
       - name: Download tested build
         uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: AstraMcp-win-x86
+          name: AstraMcp-win-x86-v${{ needs.build.outputs.version }}
           path: dist/app
       - name: Package and publish release
         shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
-          [xml]$properties = Get-Content -LiteralPath Directory.Build.props -Raw
-          $version = [string]$properties.Project.PropertyGroup.VersionPrefix
-          if ($env:RELEASE_TAG -cne "v$version") { throw 'The release tag must match VersionPrefix.' }
-          $notes = "docs/releases/$($env:RELEASE_TAG).md"
-          if (-not (Test-Path -LiteralPath $notes)) { throw 'Release notes are missing.' }
-          $archive = "dist/AstraMcp-win-x86-$($env:RELEASE_TAG).zip"
+          $tag = "v$env:RELEASE_VERSION"
+          $archive = "dist/AstraMcp-win-x86-$tag.zip"
           Compress-Archive -Path dist/app/* -DestinationPath $archive
           $hash = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()
           "$hash  $(Split-Path -Leaf $archive)" | Set-Content -LiteralPath "$archive.sha256" -Encoding ascii
-          gh release create $env:RELEASE_TAG $archive "$archive.sha256" --verify-tag --title "Astra MCP $($env:RELEASE_TAG)" --notes-file $notes
+          gh release view $tag *> $null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag $archive "$archive.sha256" --clobber
+          } else {
+            gh release create $tag $archive "$archive.sha256" --target $env:GITHUB_SHA --title "Astra MCP $tag" --notes-file docs/releases/NOTES.md --latest
+          }
           if ($LASTEXITCODE -ne 0) { throw 'GitHub release publication failed.' }

@@ -1,0 +1,109 @@
+{
+  "checkedAtUtc": "2026-11-01T15:19:43.2306422+00:00",
+  "runInBackground": true,
+  "client": "Official .NET MCP SDK 2.3.0",
+  "cases": 8,
+  "passed": 8,
+  "placedParts": 54,
+  "unplacedParts": 2,
+  "physicalSheets": 11,
+  "verifiedCutSegments": 95,
+  "sequentialCalculations": true,
+  "distinctDesktops": 8,
+  "distinctProcessIds": 8,
+  "automaticTests": {
+    "passed": 82,
+    "failed": 0,
+    "skipped": 0
+  },
+  "jobs": [
+    {
+      "case": "01-shelves",
+      "jobId": "30b2c8f4-7b83-4bb5-bf0c-b627c0763314",
+      "processId": 19252,
+      "desktop": "AstraMcp-87b55c53e16b4ee9bce3aa3adbaced4b",
+      "startedAtUtc": "2026-11-01T15:19:34.1421758+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:35.1915552+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "0B587FCBC932B0BF8F12BAD18EA1877BD71A9DE408E8591F9A842D6F86A3D4E7"
+    },
+    {
+      "case": "02-cabinet",
+      "jobId": "2891f2cf-1c77-4236-b74a-d853c384eb78",
+      "processId": 28472,
+      "desktop": "AstraMcp-10cd1da2663c4ffdb8aa4f68c069d592",
+      "startedAtUtc": "2026-11-01T15:19:35.4776123+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:36.2842212+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "A1501C491C04BCCF1650D0D8C6CFAD8FAEBE49C42603CAFD14BFD5182E031A7B"
+    },
+    {
+      "case": "03-two-materials",
+      "jobId": "49cfb102-af7e-4de2-b612-7a1cbe764410",
+      "processId": 7148,
+      "desktop": "AstraMcp-764aa33ed3494e8b8296d1a742622d78",
+      "startedAtUtc": "2026-11-01T15:19:36.5630373+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:37.4893607+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "C0DC52B33E5687CAF235FF6AE2A4BB0DE63E2F9A95399C3353752463B7A8F2FA"
+    },
+    {
+      "case": "04-rotation-required",
+      "jobId": "bffd428a-2d00-490a-88f6-967e4a1dc678",
+      "processId": 25880,
+      "desktop": "AstraMcp-6a84835f26974fdfbb42b1952e461423",
+      "startedAtUtc": "2026-11-01T15:19:37.7748137+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:38.5852746+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "5682E9F96BC372E6FC103DC46B87015EB332ADA89738778CBB74497667264C71"
+    },
+    {
+      "case": "05-rotation-forbidden",
+      "jobId": "0acef65b-6758-4c84-b247-18936ed5c0ba",
+      "processId": 29492,
+      "desktop": "AstraMcp-ba6542e01c1c45f3aaa6e64be9340110",
+      "startedAtUtc": "2026-11-01T15:19:38.8565225+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:39.7218369+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "975A6E3E986A32A24E41845122DA802DE9A09314BAE2FB2A9B1D43211E128EF3"
+    },
+    {
+      "case": "06-oversize-part",
+      "jobId": "1a9708a4-c171-424e-9cf0-8ed891d29a27",
+      "processId": 15048,
+      "desktop": "AstraMcp-ad0a059317904522b2e6e1808cb6b530",
+      "startedAtUtc": "2026-11-01T15:19:40.0034551+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:40.8589949+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "D39108EA860CB12C7DC3E9C2064D32105BE8F27AAEEBCF06D7A56DAE923BCA34"
+    },
+    {
+      "case": "07-many-copies",
+      "jobId": "494ef81d-8690-43f3-a1da-7fb06b283df1",
+      "processId": 35568,
+      "desktop": "AstraMcp-c0329a8257bb439e9f9c2269ca4521de",
+      "startedAtUtc": "2026-11-01T15:19:41.1288159+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:41.9177294+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "DC6E65AC5B60936F9FE8F96A44CE1C24409E9A5B3C278CBCDFC818834DE609CB"
+    },
+    {
+      "case": "08-repeated-numbers",
+      "jobId": "57a1f1fe-a61b-41db-bb31-d844d1f86e1a",
+      "processId": 8736,
+      "desktop": "AstraMcp-3176c50d8fcb40ed84884d751bba99ed",
+      "startedAtUtc": "2026-11-01T15:19:42.3415666+00:00",
+      "finishedAtUtc": "2026-11-01T15:19:43.061037+00:00",
+      "inputUnchanged": true,
+      "resultUnchanged": true,
+      "resultSha256": "CD611604B611C637429EC669FCEF57134C28AD8596EFDF20FC19A656A48473E4"
+    }
+  ]
+}

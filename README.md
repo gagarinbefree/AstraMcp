@@ -1,5 +1,5 @@
-[![Tests](https://github.com/gagarinbefree/AstraMcp/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/gagarinbefree/AstraMcp/actions/workflows/tests.yml)
-[![Build](https://github.com/gagarinbefree/AstraMcp/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/gagarinbefree/AstraMcp/actions/workflows/ci.yml)
+[![Tests](https://img.shields.io/github/check-runs/gagarinbefree/AstraMcp/main?nameFilter=Tests&label=tests)](https://github.com/gagarinbefree/AstraMcp/actions/workflows/ci.yml)
+[![Build](https://img.shields.io/github/check-runs/gagarinbefree/AstraMcp/main?nameFilter=Build&label=build)](https://github.com/gagarinbefree/AstraMcp/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/gagarinbefree/AstraMcp?label=release)](https://github.com/gagarinbefree/AstraMcp/releases/latest)
 ![Platform: Windows x86](https://img.shields.io/badge/platform-Windows_x86-0078D4)
 ![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
@@ -15,7 +15,7 @@
 
 Astra MCP подключает оптимизатор к вашему агенту ИИ через [Model Context Protocol](https://modelcontextprotocol.io/). После первоначальной настройки вы работаете через обычные сообщения в чате; подготовку XML и вызовы инструментов берёт на себя агент.
 
-**Уже проверено:** 81 автоматический тест и 8 из 8 реальных заказов в Астре в фоновом режиме. Сохранены исходники, неизменённые XML результатов, журналы и отчёты независимой проверки геометрии. [Посмотреть результаты →](#результаты)
+**Уже проверено:** 82 автоматических теста и 8 из 8 реальных заказов в Астре в фоновом режиме. Сохранены исходники, неизменённые XML результатов, журналы и отчёты независимой проверки геометрии. [Посмотреть результаты →](#результаты)
 
 [Зачем это нужно](#зачем-это-нужно) · [Быстрый старт](#быстрый-старт) · [Инструменты](#инструменты) · [Пример работы](#пример-работы) · [Результаты](#результаты) · [Разработка](#разработка) · [Документация](#документация)
 
@@ -273,7 +273,7 @@ get_result(jobId)      ← после Succeeded
 resources/read        ← URI из ссылки на результат
 ```
 
-Фрагмент [сохранённого ответа реального расчёта полок](examples/batch/results/20261101-144530-00447bdc/01-shelves/result-summary.txt):
+Фрагмент [сохранённого ответа реального расчёта полок](examples/batch/results/20261101-151932-af45a129/01-shelves/result-summary.txt):
 
 ```text
 Status: Succeeded
@@ -290,14 +290,14 @@ Unplaced parts: 0
 
 | Сценарий | Запрошено | Физических листов | Размещено | Не размещено | XML Астры |
 | --- | ---: | ---: | ---: | ---: | --- |
-| Полки | 6 | 1 | 6 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/01-shelves/result.astra.xml) |
-| Детали шкафа | 8 | 1 | 8 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/02-cabinet/result.astra.xml) |
-| Два материала | 7 | 2 | 7 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/03-two-materials/result.astra.xml) |
-| Требуется поворот | 1 | 1 | 1 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/04-rotation-required/result.astra.xml) |
-| Поворот запрещён | 2 | 1 | 1 | 1 | [Результат](examples/batch/results/20261101-144530-00447bdc/05-rotation-forbidden/result.astra.xml) |
-| Деталь больше листа | 3 | 1 | 2 | 1 | [Результат](examples/batch/results/20261101-144530-00447bdc/06-oversize-part/result.astra.xml) |
-| Серия одинаковых деталей | 24 | 3 | 24 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/07-many-copies/result.astra.xml) |
-| Повторяющиеся номера | 5 | 1 | 5 | 0 | [Результат](examples/batch/results/20261101-144530-00447bdc/08-repeated-numbers/result.astra.xml) |
+| Полки | 6 | 1 | 6 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/01-shelves/result.astra.xml) |
+| Детали шкафа | 8 | 1 | 8 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/02-cabinet/result.astra.xml) |
+| Два материала | 7 | 2 | 7 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/03-two-materials/result.astra.xml) |
+| Требуется поворот | 1 | 1 | 1 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/04-rotation-required/result.astra.xml) |
+| Поворот запрещён | 2 | 1 | 1 | 1 | [Результат](examples/batch/results/20261101-151932-af45a129/05-rotation-forbidden/result.astra.xml) |
+| Деталь больше листа | 3 | 1 | 2 | 1 | [Результат](examples/batch/results/20261101-151932-af45a129/06-oversize-part/result.astra.xml) |
+| Серия одинаковых деталей | 24 | 3 | 24 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/07-many-copies/result.astra.xml) |
+| Повторяющиеся номера | 5 | 1 | 5 | 0 | [Результат](examples/batch/results/20261101-151932-af45a129/08-repeated-numbers/result.astra.xml) |
 | **Итого** | **56** | **11** | **54** | **2** | **8/8 проверок** |
 
 Две неразмещённые детали ожидаемы: одна не помещается при запрете поворота, другая больше листа.
@@ -312,7 +312,7 @@ Unplaced parts: 0
 
 **Это проверка совместимости и корректности на сохранённом наборе.** Она не доказывает оптимальность раскроя, выполнимость полного дерева гильотинных резов или совместимость со всеми версиями Астры. Геометрию проверяет отдельный клиент верификации; обычный сервер не восстанавливает отсутствующие координаты и не выполняет эту геометрическую проверку автоматически.
 
-[Подробный отчёт](docs/native-verification.md) · [Все файлы прогона](examples/batch/results/20261101-144530-00447bdc/README.md) · [Машиночитаемая проверка](examples/batch/results/20261101-144530-00447bdc/verification.json)
+[Подробный отчёт](docs/native-verification.md) · [Все файлы прогона](examples/batch/results/20261101-151932-af45a129/README.md) · [Машиночитаемая проверка](examples/batch/results/20261101-151932-af45a129/verification.json)
 
 ## Формат XML и границы поддержки
 
@@ -399,15 +399,15 @@ dotnet restore AstraMcp.sln --locked-mode
 dotnet test tests/Tests/Tests.csproj --no-restore
 ```
 
-Проверен **81 тест: 0 ошибок, 0 пропусков**. Они покрывают XML, учёт физических копий, повороты, очередь, идемпотентность, отмену, таймауты, восстановление после прерывания, дочерние процессы, обмен через MCP stdio и геометрический верификатор. Дополнительно проверяются отдельный рабочий стол, реальное создание окна на нём, освобождение ресурсов и остановка процесса при ошибке сохранения PID. Вместо установленной Астры используется отдельный тестовый EXE. Функциональные изменения разрабатываются через red → green → refactor.
+Проверено **82 теста: 0 ошибок, 0 пропусков**. Они покрывают XML, учёт физических копий, повороты, очередь, идемпотентность, отмену, таймауты, восстановление после прерывания, дочерние процессы, обмен через MCP stdio и геометрический верификатор. Дополнительно проверяются отдельный рабочий стол, реальное создание окна на нём, освобождение ресурсов и остановка процесса при ошибке сохранения PID. Вместо установленной Астры используется отдельный тестовый EXE. Функциональные изменения разрабатываются через red → green → refactor.
 
 ### GitHub Actions
 
-Проверки разделены на два workflows: [Tests](.github/workflows/tests.yml) запускает автоматические тесты, [Build](.github/workflows/ci.yml) создаёт самостоятельную сборку Windows x86. Оба запускаются при push в ветку, для pull request и вручную через вкладку Actions. Новый коммит отменяет предыдущий запуск соответствующего workflow для той же ветки или pull request.
+Единый [workflow](.github/workflows/ci.yml) запускается при push в ветку, для pull request и вручную через вкладку Actions. В нём три отдельных этапа: **Tests → Build → Release**. Сборка начинается после успешных тестов; публикация релиза после успешной сборки. Новый коммит отменяет предыдущий запуск конвейера для той же ветки или pull request. Плашки вверху показывают состояния отдельных этапов Tests и Build.
 
 SDK выбирается из `global.json`, зависимости восстанавливаются в locked mode, пакеты NuGet кешируются, версии Actions закреплены SHA коммитов. В артефактах сохраняются `test-results-windows` с отчётами TRX и `AstraMcp-win-x86` с приложением. Срок хранения составляет 14 дней. Отчёты тестов загружаются и при ошибке. Установленная Астра и SSH ключи для этих проверок не нужны.
 
-Push тега `v0.1.0` запускает сборку и отдельную проверку Tests через переиспользуемый workflow. После их успешного завершения создаётся [GitHub Release](https://github.com/gagarinbefree/AstraMcp/releases) с архивом Windows x86, контрольной суммой SHA256 и описанием изменений. Тег должен соответствовать `VersionPrefix` в `Directory.Build.props`. Метаданные версии и тестовый набор хранятся вместе с кодом.
+Каждый успешный запуск для `main`, кроме pull request, автоматически создаёт [GitHub Release](https://github.com/gagarinbefree/AstraMcp/releases) с архивом Windows x86, контрольной суммой SHA256 и описанием. Версия имеет вид `0.1.<номер запуска Actions>`: первые два числа берутся из `VersionPrefix` в `Directory.Build.props`, третье из `github.run_number`. Одинаковая версия записывается в сборку, имя архива и тег релиза. Номера могут иметь пропуски после отменённых или неуспешных запусков. Для других веток и pull request сохраняются отчёт тестов и артефакт сборки, релиз не публикуется.
 
 ### Реальные расчёты в Астре
 

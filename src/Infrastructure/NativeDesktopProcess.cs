@@ -20,31 +20,7 @@ internal static class NativeDesktopProcess
         if (desktop.IsInvalid) throw Error("Cannot create the background desktop. No visible fallback was started");
         File.AppendAllText(Path.Combine(request.LogDirectory, "execution.log"), "Native desktop: " + desktopName + "\n");
 
-        // Only these three explicit handles are inherited; MCP stdin is never passed to Astra.
-        using var input = OpenFile("NUL", 0x80000000, 3);
-        using var output = OpenFile(Path.Combine(request.LogDirectory, "native-stdout.log"), 0x40000000, 2);
-        using var error = OpenFile(Path.Combine(request.LogDirectory, "native-stderr.log"), 0x40000000, 2);
-        using var attributes = new HandleList(input, output, error);
-        var startup = new StartupInfoEx
-        {
-            StartupInfo = new()
-            {
-                Size = Marshal.SizeOf<StartupInfoEx>(),
-                Desktop = desktopName,
-                Flags = 0x00000180, // STARTF_USESTDHANDLES | STARTF_FORCEOFFFEEDBACK
-                StandardInput = input.DangerousGetHandle(),
-                StandardOutput = output.DangerousGetHandle(),
-                StandardError = error.DangerousGetHandle()
-            },
-            AttributeList = attributes.Pointer
-        };
-        var command = new StringBuilder(string.Join(" ", new[] { request.ExecutablePath, request.InputPath, "-i", "-n", "-q" }.Select(Quote)));
-        if (command.Length >= 32767) throw new ArgumentException("The native command line exceeds the Windows limit.");
-        // Suspend until the managed process owns a handle and its PID has been persisted.
-        const uint flags = 0x08080004; // CREATE_NO_WINDOW | EXTENDED_STARTUPINFO_PRESENT | CREATE_SUSPENDED
-        if (!CreateProcessW(request.ExecutablePath, command, 0, 0, true, flags, 0,
-            Path.GetDirectoryName(request.ExecutablePath)!, ref startup, out var information))
-            throw Error("Cannot start Astra on the background desktop");
+        var information = StartSuspended(request, desktopName);
         using var nativeProcess = new SafeProcessHandle(information.Process, true);
         using var primaryThread = new SafeWaitHandle(information.Thread, true);
         Process? process = null;
@@ -76,10 +52,44 @@ internal static class NativeDesktopProcess
         }
     }
 
+    private static ProcessInformation StartSuspended(ProcessRequest request, string desktopName)
+    {
+        // Only these three explicit handles are inherited; MCP stdin is never passed to Astra.
+        using var input = OpenFile("NUL", 0x80000000, 3);
+        using var output = OpenFile(Path.Combine(request.LogDirectory, "native-stdout.log"), 0x40000000, 2);
+        using var error = OpenFile(Path.Combine(request.LogDirectory, "native-stderr.log"), 0x40000000, 2);
+        using var attributes = new HandleList(input, output, error);
+        var startup = new StartupInfoEx
+        {
+            StartupInfo = new()
+            {
+                Size = Marshal.SizeOf<StartupInfoEx>(),
+                Desktop = desktopName,
+                Flags = 0x00000180, // STARTF_USESTDHANDLES | STARTF_FORCEOFFFEEDBACK
+                StandardInput = input.DangerousGetHandle(),
+                StandardOutput = output.DangerousGetHandle(),
+                StandardError = error.DangerousGetHandle()
+            },
+            AttributeList = attributes.Pointer
+        };
+        var command = new StringBuilder(string.Join(" ", new[] { request.ExecutablePath, request.InputPath, "-i", "-n", "-q" }.Select(Quote)));
+        if (command.Length >= 32767) throw new ArgumentException("The native command line exceeds the Windows limit.");
+        // Suspend until the managed process owns a handle and its PID has been persisted.
+        const uint flags = 0x08080004; // CREATE_NO_WINDOW | EXTENDED_STARTUPINFO_PRESENT | CREATE_SUSPENDED
+        if (!CreateProcessW(request.ExecutablePath, command, 0, 0, true, flags, 0,
+            Path.GetDirectoryName(request.ExecutablePath)!, ref startup, out var information))
+            throw Error("Cannot start Astra on the background desktop");
+        // The child now owns its copies. Close inheritable parent handles before callbacks or awaits,
+        // so unrelated children started later cannot keep completed job logs locked.
+        return information;
+    }
+
     private static SafeFileHandle OpenFile(string path, uint access, uint disposition)
     {
         var security = new SecurityAttributes { Length = Marshal.SizeOf<SecurityAttributes>(), InheritHandle = true };
-        var handle = CreateFileW(path, access, 3, ref security, disposition, 0x80, 0);
+        // Allow cleanup even if a concurrent legacy CreateProcess inherits a temporary copy.
+        const uint share = 7; // FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE
+        var handle = CreateFileW(path, access, share, ref security, disposition, 0x80, 0);
         if (!handle.IsInvalid) return handle;
         var exception = Error("Cannot open a native standard stream");
         handle.Dispose();
