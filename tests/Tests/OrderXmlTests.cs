@@ -113,6 +113,22 @@ public sealed class OrderXmlTests
         Assert.Equal(new ResultInfo(1, 2, 0), OrderXml.ReadResult(result, OrderXml.Validate(source), "run"));
     }
 
+    [Fact]
+    public void Accepts_material_split_into_groups_by_thickness()
+    {
+        var source = Source.Replace("</list_parts>", "<part number=\"2\" length=\"300\" width=\"200\" thick=\"8\" quantity=\"1\" /></list_parts>")
+            .Replace("</list_sheets>", "<sheet length=\"2800\" width=\"2070\" thick=\"8\" quantity=\"1\" /></list_sheets>");
+        var export = Result("run", 1).Replace("</material>", "</material><material name=\"ДСП\"><list_nesting_plans><nesting_plan length=\"2800\" width=\"2070\" thick=\"8\" quantity=\"1\"><list_parts><part number=\"2\" length=\"300\" width=\"200\" rotate=\"0\" /></list_parts></nesting_plan></list_nesting_plans></material>");
+        Assert.Equal(new ResultInfo(2, 2, 3), OrderXml.ReadResult(export, OrderXml.Validate(source), "run"));
+    }
+
+    [Fact]
+    public void Still_rejects_excess_quantity_across_split_material_groups()
+    {
+        var export = Result("run", 1).Replace("</material>", "</material>" + Result("run", 2).Split("<list_materials>")[1].Split("</list_materials>")[0]);
+        Assert.Throws<InvalidDataException>(() => OrderXml.ReadResult(export, OrderXml.Validate(Source.Replace("quantity=\"4\"", "quantity=\"2\"")), "run"));
+    }
+
     internal static string Result(string name, int quantity, string length = "600.1", string width = "400.2", string rotate = "0") => $$"""
         <data><data_order name="{{name}}"><list_materials><material name="ДСП"><list_nesting_plans>
         <nesting_plan number="1" length="2800" width="2070" thick="16" quantity="{{quantity}}">

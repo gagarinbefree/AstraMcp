@@ -21,5 +21,6 @@
     <None Include="../../examples/MCP precision dot.xml" Link="TestData/astra-dot.xml" CopyToOutputDirectory="PreserveNewest" />
     <None Include="../../examples/MCP precision comma.xml" Link="TestData/astra-comma.xml" CopyToOutputDirectory="PreserveNewest" />
     <None Include="../../examples/batch/*" Link="TestData/batch/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="../fixtures/*.xml" Link="TestData/fixtures/%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

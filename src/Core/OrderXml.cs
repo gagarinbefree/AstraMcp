@@ -54,12 +54,12 @@ public static class OrderXml
         var availableSheets = source.Sheets.Select(s => s.Quantity).ToArray();
         int sheets = 0, placed = 0;
         var materials = order.Element("list_materials")?.Elements("material").ToArray() ?? [];
-        if (materials.Length != source.MaterialCount) throw Invalid("Exported material groups differ from the source order.");
-        var seen = new HashSet<string>(StringComparer.Ordinal);
+        var expectedMaterials = source.Parts.Select(p => p.Material).ToHashSet(StringComparer.Ordinal);
+        var exportedMaterials = materials.Select(m => Required(m, "name")).ToHashSet(StringComparer.Ordinal);
+        if (!expectedMaterials.SetEquals(exportedMaterials)) throw Invalid("Exported material groups differ from the source order.");
         foreach (var material in materials)
         {
             var name = Required(material, "name");
-            if (!seen.Add(name) || !source.Parts.Any(p => p.Material == name)) throw Invalid("Unexpected material in result.");
             var plans = material.Element("list_nesting_plans") ?? throw Invalid("Missing list_nesting_plans in result.");
             foreach (var plan in plans.Elements("nesting_plan"))
             {

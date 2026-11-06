@@ -6,6 +6,14 @@ namespace AstraMcp.Tests;
 
 public sealed class ManualExportTests
 {
+    [Fact]
+    public void Accepts_real_native_export_with_material_split_by_thickness()
+    {
+        var source = OrderXml.Validate(Read("fixtures/split-material-source.xml"));
+        var actual = OrderXml.ReadResult(Read("fixtures/split-material-result.xml"), source, "PC-b48cf069b63d49b7ad109f77571e5919");
+        Assert.Equal(new ResultInfo(3, 12, 0), actual);
+    }
+
     [Theory]
     [InlineData("astra-manual.xml")]
     [InlineData("astra-coordinates.xml")]

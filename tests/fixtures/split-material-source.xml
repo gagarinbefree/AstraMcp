@@ -1,0 +1,33 @@
+<data>
+  <data_order name="Фанера разной толщины" note="Одна группа материала с деталями 6, 12 и 18 мм: толщины нельзя смешивать.">
+    <list_materials>
+      <material name="Фанера берёзовая" code="PLYWOOD-BIRCH" wid_cut="2" sheet_border="0;0;0;0" nest_direct="0">
+        <list_parts>
+          <part number="PLY1" name="Дно ящика" length="500" width="400" thick="6" quantity="5" rotate="1">
+            <edge />
+            <edge />
+            <edge />
+            <edge />
+          </part>
+          <part number="PLY2" name="Полка" length="700" width="350" thick="12" quantity="4" rotate="1">
+            <edge />
+            <edge />
+            <edge />
+            <edge />
+          </part>
+          <part number="PLY3" name="Опора" length="900" width="500" thick="18" quantity="3" rotate="1">
+            <edge />
+            <edge />
+            <edge />
+            <edge />
+          </part>
+        </list_parts>
+        <list_sheets>
+          <sheet length="1525" width="1525" thick="6" quantity="5" type="0" />
+          <sheet length="1525" width="1525" thick="12" quantity="4" type="0" />
+          <sheet length="2440" width="1220" thick="18" quantity="3" type="0" />
+        </list_sheets>
+      </material>
+    </list_materials>
+  </data_order>
+</data>
